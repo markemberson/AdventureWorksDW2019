@@ -7,16 +7,27 @@ Below is a list of the tables in AdventureWorksDW 2019, with the source query as
 # Target Tables
 
 ## dbo.AdventureWorksDWBuildVersion
+
 Bulk Insert from AdventureWorksDWBuildVersion.csv
+
 ## dbo.DatabaseLog
+
 ## dbo.DimAccount
+
 Bulk Insert from DimAccount.csv
+
 ## dbo.DimCurrency
+
+~~~~SQL
 SELECT 
 CurrencyCode AS CurrencyAlternateKey, 
 Name AS CurrencyName
 FROM Sales.Currency;
+~~~~
+
 ## dbo.DimCustomer
+
+~~~~SQL
 SELECT 
     cu.CustomerID AS [CustomerKey], 
     dg.GeographyKey AS [GeographyKey], 
@@ -85,9 +96,15 @@ CROSS APPLY i.[Demographics].nodes(N'declare default element namespace "http://s
     IndividualSurvey') AS Survey(ref) 
 WHERE ca.AddressTypeID = 2 -- Home 
 ORDER BY cu.CustomerID;
+~~~~
+
 ## dbo.DimDate
+
 Replaces dbo.DimTime which was populated via Bulk Insert from DimTime.csv
+
 ## dbo.DimDepartmentGroup
+
+~~~~SQL
 SELECT 
     NULL AS ParentDepartmentGroupKey, 
     N'Corporate' AS DepartmentGroupName ;
@@ -97,7 +114,11 @@ SELECT DISTINCT
     HumanResources.Department.GroupName AS DepartmentGroupName
 FROM HumanResources.Department
 ORDER BY DepartmentGroupName;
+~~~~
+
 ## dbo.DimEmployee
+
+~~~~SQL
 SELECT 
     NULL AS [ParentEmployeeKey], 
     e.[NationalIDNumber] AS [EmployeeNationalIDAlternateKey], 
@@ -152,7 +173,11 @@ FROM [AdventureWorks].[HumanResources].[Employee] e
     LEFT OUTER JOIN [AdventureWorks].[HumanResources].[Employee] m --Manager
     ON e.[ManagerID] = m.[EmployeeID] 
 ORDER BY e.[EmployeeID];
+~~~~
+
 ## dbo.DimGeography
+
+~~~~SQL
 SELECT DISTINCT 
     a.[City] AS [City], 
     sp.[StateProvinceCode] AS [StateProvinceCode], 
@@ -178,9 +203,15 @@ FROM [Person].[Address] AS a
     ON sp.[CountryRegionCode] = crfn.[CountryRegionCode] 
 WHERE (st.[TerritoryID] IS NOT NULL)
 ORDER BY cr.[CountryRegionCode], sp.[StateProvinceCode], a.[City];
+~~~~
+
 ## dbo.DimOrganization
+
 Bulk Insert from DimOrganization.csv
+
 ## dbo.DimProduct
+
+~~~~SQL
 SELECT 
     p.ProductNumber AS ProductAlternateKey, 
     p.ProductSubcategoryID AS ProductSubcategoryKey, 
@@ -268,7 +299,11 @@ FROM [AdventureWorks].Production.Product p
         AND COALESCE(pch.EndDate, '12-31-2020') = COALESCE(plph.EndDate, '12-31-2020') 
     LEFT OUTER JOIN [AdventureWorks].[dbo].[tempProduct-ForeignNames] pfn 
     ON p.[Name] = pfn.EnglishProductName ;
+~~~~
+
 ## dbo.DimProductCategory
+
+~~~~SQL
 SELECT DISTINCT 
     pc.ProductCategoryID AS ProductCategoryAlternateKey, 
     pc.[Name] AS EnglishProductCategoryName, 
@@ -277,7 +312,11 @@ SELECT DISTINCT
 FROM [Production].[ProductCategory] pc 
     INNER JOIN [tempProductCategory-ForeignNames] pcfn 
     ON pc.[Name] = pcfn.EnglishProductCategoryName;
+~~~~
+
 ## dbo.DimProductSubCategory
+
+~~~~SQL
 SELECT DISTINCT 
     ps.ProductSubcategoryID AS ProductSubcategoryKey,    
     ps.ProductSubcategoryID AS ProductSubcategoryAlternateKey, 
@@ -290,7 +329,11 @@ FROM [AdventureWorks].[Production].[ProductSubcategory] ps
     ON ps.ProductCategoryID = dpc.ProductCategoryAlternateKey 
     LEFT OUTER JOIN [AdventureWorks]..[tempProductSubcategory-ForeignNames] psfn 
     ON ps.[Name] = psfn.EnglishProductSubcategoryName;
+~~~~
+
 ## dbo.DimPromotion
+
+~~~~SQL
 SELECT DISTINCT 
     so.SpecialOfferID AS PromotionAlternateKey, 
     so.Description AS EnglishPromotionName, 
@@ -310,7 +353,11 @@ SELECT DISTINCT
 FROM [AdventureWorks].[Sales].[SpecialOffer] AS so 
 LEFT OUTER JOIN [AdventureWorks]..[tempSpecialOffer-ForeignData] AS sofd 
 ON so.[Description] = sofd.[EnglishPromotionName];
+~~~~
+
 ## dbo.DimReseller
+
+~~~~SQL
 SELECT 
     s.[CustomerID] AS [ResellerKey], --Unique IDENTIFIER in DW
     dg.[GeographyKey] AS [GeographyKey], --Map DW GeographyKey from related OLTP tables
@@ -372,14 +419,22 @@ OUTER APPLY s.[Demographics].[nodes](N'declare default element namespace "http:/
     /StoreSurvey') AS [Survey](ref)
 WHERE ca.[AddressTypeID] = 3    -- Main Office
 ORDER BY s.[Name];
+~~~~
+
 ## dbo.DimSalesReason
+
+~~~~SQL
 SELECT DISTINCT 
         sr.[SalesReasonID] AS [SalesReasonKey], 
         sr.[SalesReasonID] AS [SalesReasonAlternateKey], 
         sr.[Name] AS [SalesReasonName], 
         sr.[ReasonType] AS [SalesReasonReasonType] 
 FROM [AdventureWorks].[Sales].[SalesReason] sr;
+~~~~
+
 ## dbo.DimSalesTerritory
+
+~~~~SQL
 SELECT 
     st.[TerritoryID] AS [SalesTerritoryKey], 
     st.[TerritoryID] AS [SalesTerritoryAlternateKey], 
@@ -396,11 +451,19 @@ SELECT
     CONVERT(nvarchar(50), N'NA') AS [SalesTerritoryRegion], 
     CONVERT(nvarchar(50), N'NA') AS [SalesTerritoryCountry], --Need to add mapping from sales territories to Country
     CONVERT(nvarchar(50), N'NA') AS [SalesTerritoryGroup];
+~~~~
+
 ## dbo.DimScenario
+
 Bulk Insert from DimScenario.csv
+
 ## dbo.FactAdditionalInternationalProductID
+
 ## dbo.FactCallCentre
+
 ## dbo.FactCurrencyRate
+
+~~~~SQL
 SELECT 
     dc.[CurrencyKey] AS [CurrencyKey], 
     dt.[TimeKey] AS [TimeKey], --Mapped to DimTime
@@ -412,9 +475,15 @@ FROM [AdventureWorks].[Sales].[CurrencyRate] cr
     INNER JOIN dbo.[DimCurrency] dc 
     ON cr.[ToCurrencyCode] = dc.[CurrencyAlternateKey] COLLATE SQL_Latin1_General_CP1_CI_AS
 ORDER BY [CurrencyKey], [TimeKey];
+~~~~
+
 ## dbo.FactFinance
+
 Bulk Insert from FactFinance.csv
+
 ## dbo.FactInternetSales
+
+~~~~SQL
 SELECT 
         dp.[ProductKey] AS [ProductKey] 
         ,(SELECT [TimeKey] FROM [dbo].[DimTime] dt 
@@ -466,7 +535,11 @@ SELECT
         LEFT OUTER JOIN [dbo].[DimEmployee] de 
         ON e.[NationalIDNumber] = de.[EmployeeNationalIDAlternateKey] COLLATE SQL_Latin1_General_CP1_CI_AS 
     ORDER BY [OrderDateKey], [CustomerKey];
+~~~~
+
 ## dbo.FactInternetSalesReason
+
+~~~~SQL
   SELECT
     soh.[SalesOrderNumber] AS [SalesOrderNumber], 
     ROW_NUMBER() OVER (PARTITION BY soh.[SalesOrderNumber], sohsr.[SalesReasonID] ORDER BY sohsr.[SalesReasonID]) AS [SalesOrderLineNumber], 
@@ -477,8 +550,13 @@ FROM [AdventureWorks].[Sales].[SalesOrderHeader] soh
     INNER JOIN [AdventureWorks].[Sales].[SalesOrderHeaderSalesReason] sohsr 
     ON soh.[SalesOrderID] = sohsr.[SalesOrderID] 
 ORDER BY soh.[SalesOrderNumber], 2;
+~~~~
+
 ## dbo.FactProductInventory
+
 ## dbo.FactResellerSales
+
+~~~~SQL
 SELECT 
     dp.[ProductKey] AS [ProductKey], 
     (SELECT [TimeKey] FROM [dbo].[DimTime] dt 
@@ -530,7 +608,11 @@ FROM [AdventureWorks].[Sales].[SalesOrderHeader] soh
     LEFT OUTER JOIN [dbo].[DimEmployee] de 
     ON e.[NationalIDNumber] = de.[EmployeeNationalIDAlternateKey] COLLATE SQL_Latin1_General_CP1_CI_AS 
 ORDER BY [OrderDateKey], [ResellerKey];
+~~~~
+
 ## dbo.FactSalesQuota
+
+~~~~SQL
 SELECT DISTINCT 
     spqh.[SalesPersonID] AS [EmployeeKey], 
     dt.[TimeKey] AS [TimeKey], --Map to DimTime.TimeKey 
@@ -540,6 +622,10 @@ SELECT DISTINCT
 FROM [AdventureWorks].[Sales].[SalesPersonQuotaHistory] spqh 
     INNER JOIN [dbo].[DimTime] dt 
     ON spqh.[QuotaDate] = dt.[FullDateAlternateKey];
+~~~~
+
 ## dbo.FactSurveyResponse
+
 ## dbo.NewFactCurrencyRate
+
 ## dbo.ProspectiveBuyer
