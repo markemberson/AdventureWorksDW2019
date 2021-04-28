@@ -1,0 +1,1019 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>Readme_AWDataWarehouseRefresh Package Sample</title>
+    
+    
+    
+    <style TYPE="text/css">
+body
+{
+background: #FFFFFF;
+color: #000000;
+font-family:    Verdana;
+font-size: medium;
+font-style: normal;
+font-weight: normal;
+margin-top: 0;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+width:  100%;
+}
+
+div.#mainSection
+{
+font-size: 70%;
+width: 100%;
+padding-left:    10;
+margin-right: 10;
+}
+
+div.#mainBody
+{
+font-size: 90%;
+margin-top: 10;
+padding-bottom: 20;
+}
+
+div.#header
+{
+background-color: #D2D2D2;
+padding-top:    0;
+padding-bottom: 0;
+padding-left:   10;
+padding-right:  0;
+width:          100%;
+}
+
+div.#header table
+{
+border-bottom-color: #C8CDDE;
+border-bottom-style: solid;
+border-bottom-width: 1;
+width:  100%;
+}
+
+span.#runningHeaderText
+{
+color: #003399;
+font-size: 90%;
+}
+
+span.#nsrTitle
+{
+/*    color: #003399;*/
+font-size: 120%;
+font-weight: 600;
+}
+
+div.#header table td
+{
+color: #000000;
+font-size: 70%;
+margin-top: 0;
+margin-bottom:  0;
+padding-right: 20;
+}
+
+div.#header table tr.#headerTableRow3 td
+{
+padding-bottom: 2;
+padding-top: 5;
+}
+
+div.#header table.#bottomTable
+{
+border-top-color: #FFFFFF;
+border-top-style: solid;
+border-top-width: 1;
+text-align: left;
+}
+
+div.#footer
+{
+font-size: 90%;
+margin-top: 0;
+margin-bottom:  0;
+margin-left:    -5;
+margin-right:   0;
+padding-top:    2;
+padding-bottom: 2;
+padding-left:   0;
+padding-right:  0;
+width:  100%;
+}
+
+hr.#footerHR
+{
+border-bottom-color: #EEEEFF;
+border-bottom-style: solid;
+border-bottom-width: 1;
+border-top-color: C8CDDE;
+border-top-style: solid;
+border-top-width: 1;
+height: 3;
+color: #D2D2D2;
+}
+
+div.section
+{
+padding-top:    2;
+padding-bottom: 2;
+padding-right:  15;
+width:  100%;
+}
+
+.heading
+{
+color:          #000000;
+font-weight:    bold;
+margin-top:     18;
+margin-bottom:  8;
+}
+
+h1.heading
+{
+color: #000000;
+font-size:  150%;
+}
+
+.subHeading
+{
+color:          #000000;
+font-weight:    bold;
+font-size:      150%;
+margin-bottom:  4;
+}
+
+h2.subHeading
+{
+color:          #000000;
+font-weight:    bold;
+font-size:      130%;
+}
+h3.subHeading
+{
+color:  #000000;
+font-size: 125%;
+font-weight: bold;
+}
+
+h4.subHeading
+{
+color: #000000;
+font-size: 110%;
+font-weight: bold;
+}
+
+h4.procedureHeading
+{
+color: #000080;
+font-size: 110%;
+font-weight: bold;
+}
+
+h5.subHeading
+{
+color: #000000;
+font-size: 100%;
+font-weight: bold;
+}
+
+img
+{
+padding-bottom: 10;
+}
+
+img.toggle
+{
+border: 0;
+margin-right: 5;
+padding-bottom: 10;
+}
+
+img.copyCodeImage
+{
+border: 0;
+margin: 1;
+margin-right: 3;
+padding-bottom: 10;
+}
+
+img.downloadCodeImage
+{
+border: 0;
+margin-right: 3;
+padding-bottom: 10;
+}
+
+img.viewCodeImage
+{
+border: 0;
+margin-right: 3;
+padding-bottom: 10;
+}
+
+img.note
+{
+border: 0;
+margin-right: 3;
+padding-bottom: 10;
+}
+
+img.#membersOptionsFilterImage
+{
+border: 0;
+margin-left: 10;
+vertical-align: middle;
+padding-bottom: 10;
+}
+
+img.#toggleAllImage
+{
+margin-left: 4;
+vertical-align: middle;
+padding-bottom: 10;
+}
+
+div.#mainSection table
+{
+border: 0;
+font-size: 100%;
+width:  100%;
+margin-top: 5px;
+margin-bottom: 15px;
+}
+
+div.#mainSection table tr
+{
+vertical-align: top;
+}
+
+div.#mainSection table th
+{
+text-align: left;
+background: #D8D8D8;
+border-bottom-color: #D8D8D8;
+border-bottom-style: solid;
+border-bottom-width: 1;
+color: #000000;
+padding-left: 5;
+padding-right: 5;
+}
+
+div.#mainSection table td
+{
+background: #F2F2F2;
+border-top-color: #D8D8D8;
+border-top-style: solid;
+border-top-width: 1;
+padding-left: 5;
+padding-right: 5;
+}
+
+div.#mainSection table td.imageCell
+{
+white-space: nowrap;
+}
+
+div.code
+{
+width: 98%;
+}
+
+div.code table
+{
+border: 0;
+font-size: 95%;
+margin-bottom: 5;
+width: 100%
+}
+
+div.code table th
+{
+text-align: left;
+background: #D8D8D8;
+border-bottom-color: #D8D8D8;
+border-bottom-style: solid;
+border-bottom-width: 1;
+color: #000000;
+font-weight: bold;
+padding-left: 5;
+padding-right: 5;
+}
+
+div.code table td
+{
+background: #CCCCCC;
+border-top-color: #D8D8D8;
+border-top-style: solid;
+border-top-width: 1;
+padding-left: 5;
+padding-right: 5;
+padding-top: 5;
+}
+
+div.alert
+{
+margin-left: 10;
+width: 98%;
+}
+
+div.alert table
+{
+border: 1;
+font-size: 100%;
+width:  100%;
+border: solid 1 #DEDFEF;
+}
+
+div.alert table th
+{
+text-align: left;
+background: #D8D8D8;
+border-bottom-width: 0;
+color: #000000;
+padding-left: 5;
+padding-right: 5;
+border: solid 1 #DEDFEF;
+}
+
+div.alert table td
+{
+background: #FFFFFF;
+border-top-color: #D8D8D8;
+border-top-style: solid;
+border-top-width: 1;
+padding-left: 5;
+padding-right: 5;
+border: solid 1 #DEDFEF;
+}
+
+span.copyCode
+{
+color: #0000ff;
+font-size: 90%;
+font-weight: normal;
+cursor: hand;
+float: right;
+display: inline;
+text-align: right;
+}
+
+.downloadCode
+{
+color: #0000ff;
+font-size: 90%;
+font-weight: normal;
+cursor: hand;
+}
+
+.viewCode
+{
+color: #0000ff;
+font-size: 90%;
+font-weight: normal;
+cursor: hand;
+}
+
+div.code pre
+{
+font-family:    Monospace, Courier New, Courier;
+font-size: 105%;
+color:  #000000;
+}
+
+code
+{
+font-family:    Monospace, Courier New, Courier;
+font-size: 105%;
+color:  #000000;
+}
+
+dl
+{
+margin-top: 0;
+padding-left:   1;
+}
+
+dd
+{
+margin-bottom:  0;
+margin-left:    0;
+padding-left:   20;
+}
+
+dd p
+{
+margin-top: 5;
+}
+
+ul
+{
+margin-left: 17;
+list-style-type: disc;
+}
+
+ul ul
+{
+margin-bottom: 4;
+margin-left: 17;
+margin-top: 3;
+list-style-type: disc;
+}
+
+ol
+{
+margin-left: 24;
+list-style-type: decimal;
+}
+
+ol ol
+{
+margin-left: 24;
+margin-top: 3;
+list-style-type: lower-alpha;
+}
+
+li
+{
+margin-top: 0;
+margin-bottom: 0;
+padding-bottom: 0;
+padding-top: 0;
+margin-left: 5;
+}
+
+p
+{
+margin-bottom: 15;
+}
+
+.tip
+{
+color:  #0000FF;
+font-style: italic;
+cursor:hand;
+text-decoration:underline;
+}
+
+.math
+{
+font-family: Times New Roman;
+font-size: 125%
+}
+.sourceCodeList
+{
+font-family: Verdana;
+font-size: 90%;
+}
+
+pre.viewCode
+{
+width: 100%;
+overflow: auto;
+}
+
+li:hover table, li.over table
+{
+background-color: #C0C0C0;
+}
+
+li:hover ul, li.over ul
+{
+background-color: #d2d2d2;
+border: 1px solid #000;
+display: block;
+}
+            </style>
+  </head>
+  <body>
+    <!--Topic built:08/05/2008 01:28:33-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="nsrTitle">Readme_AWDataWarehouseRefresh Package Sample</span>
+          </td>
+          <td align="right">
+            <span id="headfb" class="feedbackhead">
+            </span>
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      <div id="mainBody"><p> 08/05/2008 01:28:33</p>
+        
+        <font color="DarkGray"> </font><p /> 
+        <span id="changeHistory">
+        </span>
+    <p>
+      This sample works only with SQL Server 2005 and SQL Server 2008. It will not work with any version of SQL Server earlier than SQL Server 2005.
+    </p>
+    <p>This sample works with the SQL Server 2005 version of the <b>AdventureWorks</b> OLTP database. To install this database, see <a href="http://go.microsoft.com/fwlink/?LinkId=122077" alt="blocked::http://go.microsoft.com/fwlink/?LinkId=122077"><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">Sample Databases for Microsoft SQL Server 2008</linkText></a>.</p>
+    <p>The AWDataWarehouseRefresh sample package illustrates how to create and populate user tables in the new <b>AdvWorksDWX</b> database, using data from the <b>AdventureWorks</b> database. Several Transact-SQL scripts are executed to create the tables, after which several Execute SQL tasks run to populate the tables. </p>
+    <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left">Important: </th></tr><tr><td>
+      Samples are provided for educational purposes only. They are not intended to be used in a production environment and have not been tested in a production environment. Microsoft does not provide technical support for these samples.<p />
+    </td></tr></table><p /></div>
+  <h1 class="heading">Requirements</h1><div id="requirementsSection" class="section">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">Running this sample package requires the following:</p>
+      <ul xmlns=""><li>
+          The sample package and data files that it uses must be installed on the local hard disk drive. <br />
+        </li><li>
+          You must have installed and have administrative permissions on the <b>AdventureWorks</b> OLTP database. <br />
+        </li><li>
+          If you intend only to run the sample package from the command line, you must install Integration Services. <br />
+        </li><li>
+          If you intend to open the package in SSIS Designer and run the sample package, you must install Business Intelligence Development Studio. <br />
+        </li></ul>
+      <p xmlns="">The following files are required to run this sample package.</p>
+      <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+            <th>
+              File
+            </th>
+            <th>
+              Description
+            </th>
+          </tr><tr>
+          <td>
+            <p>AWDWRefresh.dtsx</p>
+          </td>
+          <td>
+            <p>The sample package.</p>
+          </td>
+        </tr></table>
+      <p xmlns="">For more information about how to install samples, see "Installing Sample Integration Services Packages" in SQL Server Books Online. </p>
+    </content>
+  </div><h1 class="heading">Location of the Sample Package</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">If the samples were installed to the default location, the AWDataWarehouseRefresh sample package and data files are located in the following folder: </p>
+      <p xmlns="">
+        C:\Program Files\Microsoft SQL Server\100\Samples\Integration Services\Package Samples\AWDataWarehouseRefresh\</p>
+      <div class="alert" xmlns=""><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left">Note: </th></tr><tr><td>
+        If you changed the installation location of the project, you must modify the <b>BasePath</b> and <b>DataFilePath</b> variables in the package.<p />
+      </td></tr></table><p /></div>
+    </content></div><h1 class="heading">Running the Sample</h1><div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">The package can be run from the command line by using the <b>dtexec </b>utility, or can be run in Business Intelligence Development Studio.</p>
+      <h4 class="procedureHeading" xmlns="">To run the package by using dtexec</h4><div id="procedureSectionEFBFBHA" class="section" xmlns=""><ol><li>
+            <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+              <p xmlns="">Open a Command Prompt window.</p>
+            </content>
+          </li><li>
+            <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+              <p xmlns="">Use the <b>Change Directory</b> command, <b>cd</b>, to change the directory to C:\Program Files\Microsoft SQL Server\100\DTS\Binn, the location of <b>dtexec</b>.</p>
+            </content>
+          </li><li>
+            <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+              <p xmlns="">Type the following command:</p>
+              <div class="code" xmlns=""><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left" /></tr><tr><td colspan="2"><pre>dtexec /f "C:\Program Files\Microsoft SQL Server\100\Samples\Integration Services\Package Samples\AWDataWarehouseRefresh\AWDataWarehouseRefresh\AWDWRefresh.dtsx"</pre></td></tr></table></span></div>
+            </content>
+          </li><li>
+            <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+              <p xmlns="">Press <b>Enter</b>.</p>
+            </content>
+          </li></ol></div>
+      <p xmlns="">For more information about how to run the package by using the <b>dtexec</b> utility, see the topic, "dtexec Utility", in SQL Server Books Online. </p>
+      <h4 class="procedureHeading" xmlns="">To run the package in Business Intelligence Development Studio</h4><div id="procedureSectionEBBFBHA" class="section" xmlns=""><ol><li>
+            <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+              <p xmlns="">Open Business Intelligence Development Studio.</p>
+            </content>
+          </li><li>
+            <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+              <p xmlns="">On the <b>File</b> menu, point to <b>Open</b>, and then click <b>Project/Solution</b>.</p>
+            </content>
+          </li><li>
+            <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+              <p xmlns="">Set the <b>Files of type:</b> to <b>Integration Services Project Files (*.dtproj)</b>, locate the AWDataWarehouseRefresh<b> </b>folder, and then double-click the file named AWDataWarehouseRefresh.dtproj.</p>
+            </content>
+          </li><li>
+            <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+              <p xmlns="">In <b>Solution Explorer</b>, right-click AWDWRefresh.dtsx in the <b>SSIS Packages</b> folder, and then click <b>Execute Package</b>. </p>
+            </content>
+          </li></ol></div>
+    </content></div><h1 class="heading">Components in Sample</h1><div id="sectionSection2" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">The following table lists the tasks, containers, data sources and destinations, and transformations that are used within the sample. </p>
+      <p xmlns="">You can browse the objects in the package by selecting any object on the Control Flow tab and then pressing SHIFT+TAB to advance through the objects one by one. You can also see a big picture of the package by clicking the four-way locator arrow at the lower right corner of the Control Flow design surface, and then positioning the view window over the package. </p>
+      <p xmlns="">Because this package represents an example of a production database, there are many objects and containers, collected into logical groups. You can collapse the groups to make it easier to view the whole package, or expand a group to better see the items in a particular group. The tasks and containers in the package are listed here by their groups.</p>
+    </content><sections xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <h3 class="subHeading" xmlns="">Database and Tables Group</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">The group, <b>Database and tables</b>, contains a Sequence container, a Foreach Loop container, and an Execute SQL task. These containers in turn include the tasks listed in this table.</p>
+          <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+                <th>
+                  Element
+                </th>
+                <th>
+                  Purpose
+                </th>
+              </tr><tr>
+              <td>
+                <p>Sequence Container</p>
+              </td>
+              <td>
+                <p>The Sequence container, <b>Prepare New Database</b>, contains three Execute SQL tasks that create the new database and set database options. The sequence is followed by a Foreach Loop container and another Execute SQL task.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>The Execute SQL task, <b>Drop database</b>, deletes any existing instances of <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>The Execute SQL task, <b>Create database</b>, creates a new database, <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>The Execute SQL task, <b>Set database options</b>, executes an ALTER DATABASE statement.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Foreach Loop container</p>
+              </td>
+              <td>
+                <p>The Foreach Loop container, <b>Create tables</b>, contains an Execute SQL task that runs SQL statements from files that match the file filter CreateTable-*.sql.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task </p>
+              </td>
+              <td>
+                <p>Creates tables in the <b>AdvWorksDWX</b> database by running SQL statements from files specified in the Foreach Loop.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task </p>
+              </td>
+              <td>
+                <p>The Execute SQL task, <b>Create udfMinimumDate function</b>, creates a user-defined function by using direct input of an SQL statement.</p>
+              </td>
+            </tr></table>
+        </content></div>
+      <h3 class="subHeading" xmlns="">Temporary Tables Group</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">The group, <b>Temporary Tables</b>, contains two Foreach Loops, each containing an Execute SQL Task that loops through SQL statements in files. The location of the folder that contains the files is defined by a file connection manager.</p>
+          <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+                <th>
+                  Element
+                </th>
+                <th>
+                  Purpose
+                </th>
+              </tr><tr>
+              <td>
+                <p>Foreach Loop container</p>
+              </td>
+              <td>
+                <p>The Foreach Loop, <b>Drop temp tables</b>, contains an Execute SQL task that runs SQL statements from files that match the file filter DropTempTable-*.sql.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>Drops temporary tables in the <b>AdventureWorks</b> database by running SQL statements from files specified in the Foreach Loop</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Foreach Loop container</p>
+              </td>
+              <td>
+                <p>The Foreach Loop, <b>Create temp tables</b>, contains an Execute SQL task that runs SQL statements from files that match the file filter CreateTempTable-*.sql.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>Creates temporary tables in the <b>AdventureWorks</b> database by running SQL statements from files specified in the Foreach Loop.</p>
+              </td>
+            </tr></table>
+        </content></div>
+      <h3 class="subHeading" xmlns="">Load Temporary Tables Group</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">The group, <b>Load temporary tables</b>, contains seven Bulk Insert tasks that load data from .csv files into temporary tables in the <b>AdventureWorks</b> database.</p>
+          <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+                <th>
+                  Element
+                </th>
+                <th>
+                  Purpose
+                </th>
+              </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert tempProductSubcategory-ForeignNames</b>, inserts data into a temporary table.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert tempProduct-ForeignNames</b>, inserts data into a temporary table.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert tempStore-MinPayment</b>, inserts data into a temporary table.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert tempProductCategory-ForeignNames</b>, inserts data into a temporary table.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert tempCustomer-YearlyIncome</b>, inserts data into a temporary table.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert tempIndividual-ForeignData</b>, inserts data into a temporary table.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert tempSpecialOffer-ForeignData</b>, inserts data into a temporary table.</p>
+              </td>
+            </tr></table>
+        </content></div>
+      <h3 class="subHeading" xmlns="">Create Keys and Indexes Group</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">The group, <b>Create Keys and Indexes</b>, contains four Execute SQL tasks connected by precedence constraints, and also contains a Foreach Loop container.</p>
+          <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+                <th>
+                  Element
+                </th>
+                <th>
+                  Purpose
+                </th>
+              </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>The Execute SQL task, <b>Add Primary Keys</b>, creates primary keys on the new tables in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>The Execute SQL task, <b>Add Indexes</b>, indexes the new tables in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>The Execute SQL task, <b>Add Foreign Key Constraints</b>, adds constraints to the new tables in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>The Execute SQL task, <b>Drop udfMinimumDate function</b>, deletes the user-defined function from <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Foreach Loop container</p>
+              </td>
+              <td>
+                <p>The Foreach Loop container, <b>Drop temp tables 1</b>, contains an Execute SQL task that runs SQL statements from files that match the file filter DropTempTable-*.sql.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Execute SQL task</p>
+              </td>
+              <td>
+                <p>Deletes temporary tables from the <b>AdventureWorks</b> database by running SQL statements from files specified in the Foreach Loop.</p>
+              </td>
+            </tr></table>
+        </content></div>
+      <h3 class="subHeading" xmlns="">Ungrouped Tasks</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">The package also contains 25 tasks that are not in any group, but perform operations that move data between tasks in the other groups.</p>
+          <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+                <th>
+                  Element
+                </th>
+                <th>
+                  Purpose
+                </th>
+              </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert FactFinance</b>, loads data from a .csv file into a fact table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert DimAccount</b>, loads data from a .csv file into a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert AdventureWorksDWBuildVersion</b>, updates the version information for the data warehouse in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimPromotion</b>, contains an OLE DB source and a SQL Server destination. The data flow runs a query against <b>AdventureWorks</b> to identify promotions and writes the results to a dimension table in <b>AdvWorkDWX</b>. </p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert DimOrganization</b>, loads data from a .csv file into a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimSalesReason</b>, contains an OLE DB source and a SQL Server destination. The data flow runs a query against <b>AdventureWorks</b> to look up sales reasons and writes the results to a dimension table in <b>AdvWorkDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimReseller</b>, contains an OLE DB source, a Data Conversion transformation, and a SQL Server destination. The data flow performs a complex query, including conditional statements and lookups, against <b>AdventureWorks</b> and writes the results to a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimEmployee</b>, contains an OLE DB source and a SQL Server destination. The data flow performs lookups on a Human Resources table, assigns salesperson IDs, and writes the results to a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimCurrency</b>, contains an OLE DB source and a SQL Server destination. The data flow extracts data from a currency table, changes the column names, and writes the data to a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert DimScenario</b>, loads data from a .csv file into a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Bulk Insert task</p>
+              </td>
+              <td>
+                <p>The Bulk Insert task, <b>Bulk Insert - DimTime</b>, loads data from a .csv file into a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - FactSalesQuota</b>, contains an OLE DB source and a SQL Server destination. The data flow extracts quotas for salespeople and updates a fact table in <b>AdvWorksDXW</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - FactCurrencyRate</b>, contains an OLE DB source and a SQL Server destination. The data flow extracts and converts currency information by using SQL statements, and then updates a fact table in <b>AdvWorksDXW</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimProduct</b>, contains an OLE DB source and a SQL Server destination. The data flow performs complex processing of data in temporary tables by using SQL statements, and then updates a dimension table in <b>ADvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimProductCategory</b>, contains an OLE DB source and a SQL Server destination. The data flow maps foreign product categories to English category names and updates a dimension table in <b>ADvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimProductsSubcategory</b>, contains an OLE DB source and a SQL Server destination. The data flow extracts translations for product subcategories from a reference table and then updates a dimension table in <b>ADvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimGeography</b>, contains an OLE DB source and a SQL Server destination. The data flow looks up addresses in a reference table and then writes the results to a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimCustomer</b>, contains an OLE DB source and a SQL Server destination. The data flow takes multiple inputs—the data from <b>DimGeography</b>, and two temporary tables—and extracts data for updating a dimension table in <b>AdvWorksDWX</b>. </p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - FactInternetSalesReason</b>, contains an OLE DB source and a SQL Server destination. The data flow extracts data from <b>AdventureWorks</b> and updates a fact table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimSalesTerritory 1</b>,<b> </b>contains an OLE DB source and a SQL Server destination. The data flow looks up regional codes for territories and writes the results to a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimSalesTerritory 2</b>, contains an OLE DB source and a SQL Server destination. The data flow adds country/region mappings to the data processed in the previous data flow.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimDepartmentGroup</b>, contains an OLE DB source and a SQL Server destination. The data flow changes all group names to Corporate and writes the values to a dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - DimDepartmentGroup 1</b>, contains an OLE DB source and a SQL Server destination. The data flow looks up group names in a human resources table and updates the values in the dimension table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - FactInternetSales</b>, contains an OLE DB source and a SQL Server destination. The data flow takes multiple inputs from other tasks, including the newly created user-defined function, and updates a fact table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr><tr>
+              <td>
+                <p>Data Flow task</p>
+              </td>
+              <td>
+                <p>The Data Flow task, <b>Data Flow Task - FactResellerSales</b>, contains an OLE DB source and a SQL Server destination. The data flow takes multiple inputs from other tasks, including the newly created user-defined function, and updates a fact table in <b>AdvWorksDWX</b>.</p>
+              </td>
+            </tr></table>
+        </content></div>
+    </sections></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]--></div>
+      <div id="footer">
+			
+			© 2008 Microsoft Corporation. All rights reserved.
+		</div>
+    </div>
+  </body>
+</html>
